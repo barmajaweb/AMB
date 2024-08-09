@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMB</title>
+  <link rel="icon" type="image/x-icon" href="icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style> 
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    body{
+
+      overflow-x: hidden;
+      position: relative;
+      background-color:  rgb(255, 244, 31);
+    }
+    .navbar{
+      position: fixed;
+      display: flex;
+      justify-content: space-between;
+      transition: 0.7s;
+      
+      align-items: center;
+      
+      background-color: black;
+      height: 80px;
+      width: 100%;
+      z-index: 1;
+      top: 0;
+      left: 0;
+    }
+    .logo{
+      width: 20%;
+      margin-top: 0vh;
+      margin-left: 15vh;
+      cursor: pointer;
+      transition: 0.7s;
+    }
+    .logo:hover{
+      transform: scale(1.1);
+    }
+    ul{
+      display: flex;
+      margin-right: 20vh;
+      
+     
+    }
+    ul li{
+
+      
+      margin-right: 5vh;
+      transition: 0.7s;
+      list-style: none;
+    }
+    ul li a{
+      text-decoration: none;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold; 
+      cursor: pointer;
+
+    }
+    ul li:hover{
+      transform: scale(1.09);
+
+    }
+    .get a{
+      background-color: rgb(255, 244, 31);
+      padding: 25px 12px;
+      transform: scale(1);
+      color: black;
+    }
+    .get a:hover{
+      background-color: rgb(0, 0, 0);
+      color: rgb(255, 254, 254);
+
+    }
+    .noget a{
+
+
+      background-color: rgb(255, 244, 31);
+      padding: 25px 12px;
+      transform: scale(1);
+      color: black;
+    }
+    .noget a:hover{
+      
+      background: transparent;
+     
+      color: rgb(255, 255, 255);
+      
+    }
+    .section1{
+
+
+      width: 100%;
+      height: 100vh;
+      background:url(background.jpg) ;
+      background-position: center;
+      background-size: cover;
+      transform: scale(1.1);
+      position: relative;
+      top: 8vh;
+      transition: 0.7s;
+      
+      
+    }
+    .aminimg{
+      width:14%;
+      object-fit: contain;
+      position: absolute;
+      top:43%;
+      left: 43%;
+      transition: 0.7s;
+    }
+    .section2{
+      width: 100%;
+      height: 150px;
+      background-color: black;
+      
+      position: absolute;
+      top: 110vh;
+     
+    }
+    .section2 h1{
+      color: white;
+      margin-left: 14%;
+      margin-top: 50px;
+      font-size: 60px;
+    }
+    .section3{
+      width: 100%;
+      height: 600px;
+    }
+    .section3 h1{
+      color: rgb(0, 0, 0);
+     font-family: Arial, Helvetica, sans-serif;
+     font-weight: bold; 
+     margin-top: 35vh;
+     margin-left:45% ;
+    }
+    .section3 h2{
+
+      color: rgb(0, 0, 0);
+     font-family: Arial, Helvetica, sans-serif;
+     font-weight: bold; 
+     margin-top: 10vh;
+     margin-left:30% ;
+     font-size: 65px;
+    }
+    .section3 h2 span{
+      color: rgb(0, 0, 0);
+     font-family: Arial, Helvetica, sans-serif;
+     font-weight: bold; 
+     margin-top: 10vh;
+     margin-left:7% ;
+     font-size: 60px;
+    }
+    .section3  p{
+
+      color: rgb(66, 64, 64);
+     font-family: Arial, Helvetica, sans-serif;
+     
+     margin-top: 5vh;
+     margin-left:15% ;
+     font-size: 18px;
+     line-height: 30px;
+    }
+    .section3  p span{
+
+      color: rgb(66, 64, 64);
+     font-family: Arial, Helvetica, sans-serif;
+     
+     
+     
+     font-size: 16px;
+     line-height: 30px;
+     margin-left: 5px;
+    }
+    .section3  h3{
+      line-height: 1.9em;
+      color: rgb(24, 24, 24);
+     font-family: Arial, Helvetica, sans-serif;
+     
+     
+     
+     font-size: 45px;
+     margin-top: 5vh;
+     margin-left:30% ;
+    }
+    .section3  h3 .change{
+      filter: url(#threshold) blur(0.6px);
+      color: rgb(24, 24, 24);
+     font-family: Arial, Helvetica, sans-serif;
+     
+     
+     display: flex;
+     
+     
+     margin-left:-38% ;
+     transition: 0.7s;
+
+    }
+    #text1,
+    #text2 {
+    position: absolute;
+    width: 100%;
+    display: inline-block;
+    
+    font-weight: bolder;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 45px;
+
+    text-align: center;
+
+    user-select: none;
+    }
+.section4{
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  height: 675px;
+
+}
+.section4 video{
+  width: 60%;
+  
+  margin-top: 12vh;
+  margin-left: 21%;
+  border-radius: 15px;
+  
+  
+}
+.section5{
+  width: 100%;
+  height: 500px;
+}
+.section5 h1{
+     color: rgb(0, 0, 0);
+     font-family: Arial, Helvetica, sans-serif;
+     font-weight: bold; 
+     margin-top: 10vh;
+     margin-left:45% ;
+}
+.section5 h2{
+
+  color: rgb(0, 0, 0);
+ font-family: Arial, Helvetica, sans-serif;
+ font-weight: bold; 
+ margin-top: 8vh;
+ margin-left:25% ;
+ font-size: 65px;
+}
+.section5  p{
+
+  color: rgb(66, 64, 64);
+ font-family: Arial, Helvetica, sans-serif;
+ 
+ margin-top: 5vh;
+ margin-left:16% ;
+ font-size: 18px;
+ line-height: 30px;
+}
+.section5  p span{
+
+
+ color: rgb(66, 64, 64);
+ font-family: Arial, Helvetica, sans-serif;
+ 
+ 
+ 
+ font-size: 18px;
+ line-height: 30px;
+ margin-left: 24vh;
+}
+.section5  p .span{
+
+
+  color: rgb(66, 64, 64);
+  font-family: Arial, Helvetica, sans-serif;
+  
+  
+  
+  font-size: 18px;
+  line-height: 30px;
+  margin-left: 5px;
+ }
+ .section6{
+  background-color: black;
+  width: 100%;
+  height: 665px;
+  
+}
+ .image-countainer{
+  position: relative;
+  width: 200px;
+  height: 200px;
+ 
+  transform:  perspective(1000px)  rotateY(0deg);
+  transform-style: preserve-3d;
+  left: 45%;
+  top: 30vh;
+  transition: 0.7s;
+  
+  
+}
+.image-countainer span {
+   position: absolute;
+   width: 100%;
+   transform: rotateY(calc(var(--i)*45deg)) translateZ(400px);
+
+ 
+  
+}
+.image-countainer span img {
+  border-radius: 15px;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.7s;
+  
+
+
+ 
+}
+.image-countainer span img:hover {
+transform: scale(1.1);
+
+
+
+
+}
+.section7{
+  display: flex;
+  width: 100%;
+  height: 500px;
+  background-color: black;
+  padding-left: 10vh;
+}
+.section7 img {
+  width: 30%;
+  
+  
+  object-fit: contain;
+}
+.section8 {
+  width: 100%;
+  height: 660px;
+  background-color: rgb(45, 44, 44);
+}
+.section8 h1  {
+  color: rgb(142, 138, 138);
+ font-family: Arial, Helvetica, sans-serif;
+ font-weight: bold; 
+ position: relative;
+ top:10vh ;
+ margin-left:33% ;
+ font-size: 65px;
+}
+.section8 .all{
+  width: 100%;
+  display: flex;
+}
+.social{
+  position: relative;
+  left: 60vh;
+}
+.social h1{
+  position: relative;
+  top: 25vh;
+  font-size: 30px;
+  left: 15px;
+  
+}
+
+.social img{
+  transition: 0.7s;
+  position: relative;
+  top: 32vh;
+  margin-left: 15vh;
+  width: 40px;
+  cursor: pointer;
+}
+.social img:hover{
+ transform: scale(1.2);
+}
+.contact{
+  position: relative;
+  top: 30vh;
+  left: 18%;
+  line-height: 8vh;
+}
+.contact h2{
+  color: azure;
+}
+.contact h2 span{
+  color: rgb(137, 137, 137);
+}
+
+    
+    
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div ><img class="logo" src="amin.png" alt=""></div>
+    <div class="ul">
+      <ul>
+        <li><a  id="whoo" >WHO WE ARE</a></li>
+        <li><a  id="what">WHAT WE DO</a></li>
+        <li  class="get "><a  id="contact"> OUR CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+  <section class="section1">
+    <img class="aminimg" src="amin.png" alt="">
+  </section>
+  <section class="section2">
+    <h1>WE ARE A BRAND BUILDING AGENCY</h1>
+  </section>
+  <section class="section3">
+    <h1 >WHO WE ARE</h1>
+    <h2>HOME OF CREATIVE <br> <span>EFFECTIVENESS</span></h2>
+    <p>Looking for the right amount of creativity aligned with your brand goals ? Welcome to the home of creative effectiveness. Our expertise <br>
+       <span> fuels your journey from idea to execution, infusing fresh, purpose-driven creativity. We don't create for the sake of it  we believe in the
+         power of strategy to <br> elevate your brand. With BRAND BUILDER, your brand's story becomes a powerful force in the  market. Let's build your brand!</span>
+    </p>
+    <h3>We think, design, execute your <br>
+      <span class="change">
+        <span id="text1"></span>
+        <span id="text2"></span>
+      </span>
+      <svg id="filters">
+        <defs>
+            <filter id="threshold">
+                <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                      0 1 0 0 0
+                      0 0 1 0 0
+                      0 0 0 255 -140" />
+            </filter>
+        </defs>
+      </svg>
+    </h3>
+  </section>
+  <section class="section4">
+     <video src="video.mp4" controls></video>
+  </section>
+  <section class="section5">
+    <h1 >WHAT WE DO</h1>
+    <h2>Brands we helped BUILD</h2>
+    <p>We value the importance of creating a winning strategy for our clients. Putting the prime prospect at the heart of all that we do ... 
+      <br>
+       <span> Addressing purchase barriers ... While doing it differently vs. Competition!</span>
+    </p>
+    <p>
+      We value consumer knowledge, that helps us create content & concepts that truly make a lasting impression on consumers. It is the <br>
+        <span class="span">
+          consumer INSIGHT that guides our recommendations and it is with the consumer that we test our concepts before executing them.
+        </span>
+    </p>
+  </section>
+  <section class="section6">
+    <div class="image-countainer">
+      <span style="--i :1">
+        <img onclick=" bodu(this.src)" src="https://picsum.photos/id/237/300/200" alt="">
+      </span>
+      <span style="--i :2">
+        <img  onclick=" bodu(this.src)" src="https://picsum.photos/id/24/300/200" alt="">
+      </span>
+      <span style="--i :3">
+        <img  onclick=" bodu(this.src)" src="https://picsum.photos/id/23/300/200" alt="">
+      </span>
+      <span style="--i :4">
+        <img  onclick=" bodu(this.src)" src="https://picsum.photos/id/26/300/200" alt="">
+      </span>
+      <span style="--i :5">
+        <img  onclick=" bodu(this.src)" src="https://picsum.photos/id/54/300/200" alt="">
+      </span>
+      <span style="--i :6">
+        <img  onclick=" bodu(this.src)" src="https://picsum.photos/id/36/300/200" alt="">
+      </span>
+      <span style="--i :7">
+        <img  onclick=" bodu(this.src)" src="https://picsum.photos/id/89/300/200" alt="">
+      </span>
+      <span style="--i :8">
+        <img  onclick=" bodu(this.src)" src="https://picsum.photos/id/46/300/200" alt="">
+      </span>
+    </div>
+
+  </section>
+  <section class="section7">
+    <img src="phone.png" alt="">
+    <img src="phone.png" alt="">
+    <img src="phone.png" alt="">
+  </section>
+  <section class="section8">
+     <h1>OUR CONTACT</h1>
+     <div class="all">
+      <div class="contact">
+        <h2>Phone:<span> +000 0 00 00 00 00</span> </h2>
+        <h2>Email: <span>Exemple@gmail.com</span></h2>
+        <h2>Address: <span>&&&&&&&&&&&&</span></h2>
+
+      </div>
+      <div class="social">
+        <h1>social media</h1>
+        <a href="" target="_blank"><img src="https://www.brandbuilder.ma/wp-content/themes/bb_v2/images/instagram-logo.png" alt=""></a>
+        <a href="" target="_blank"><img src="https://www.brandbuilder.ma/wp-content/themes/bb_v2/images/linkedin-logo.png" alt=""></a>
+      </div>
+     </div>
+
+
+  </section>
+  <script src="js.js"></script>
+</body>
+</html>
